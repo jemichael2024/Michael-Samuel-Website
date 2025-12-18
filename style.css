@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   background: #fff0f0;
-  color: #b30000;
+  color: #0c0101;
 }
 
 header {
@@ -23,7 +23,7 @@ nav a {
 }
 
 section {
-  max-width: 700px;
+  max-width: 1000px;
   margin: 2rem auto;
   background: #fff5f5;
   padding: 2rem;
@@ -31,12 +31,36 @@ section {
   box-shadow: 0 2px 8px rgba(179,0,0,0.05);
   border: 1px solid #ffcccc;
 }
+/* Force About section into 2 columns */
+.about-layout {
+  display: flex;
+  flex-direction: row;   /* side-by-side */
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Image column */
+.about-image {
+  flex: 0 0 220px; /* fixed width column */
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid #ffcccc;
+}
+
+/* Text column */
+.about-text {
+  flex: 1;
+}
 
 h2 {
   color: #b30000;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   width: 100%;
   margin-bottom: 1rem;
   padding: 0.75rem;
@@ -67,13 +91,21 @@ footer {
   margin-top: 2rem;
 }
 
+/* Fade-in animation */
 .fade {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s, transform 1s;
+  transform: translateY(20px);
+  transition: opacity 2.5s ease, transform 2.5s ease;
 }
 
 .fade.visible {
   opacity: 1;
   transform: translateY(0);
+}
+/* phone*/
+@media (max-width: 768px) {
+  .about-layout {
+    flex-direction: column;
+    text-align: center;
+  }
 }
