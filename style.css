@@ -75,4 +75,5 @@ footer {
 
 .fade.visible {
   opacity: 1;
-  transform:
+  transform: translateY(0);
+}
