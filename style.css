@@ -1,11 +1,25 @@
-/* Make the website use a red color scheme */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* 🚫 no side-to-side scrolling */
+  margin: 0;
+}
+/* ---------- GLOBAL ---------- */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #fff0f0;
+  background: #241f1f;
   color: #0c0101;
 }
 
+section {
+  display: block;
+}
+
+/* ---------- HEADER ---------- */
 header {
   background: #b30000;
   color: #fff;
@@ -22,26 +36,25 @@ nav a {
   font-weight: bold;
 }
 
-section {
+/* ---------- ABOUT ---------- */
+#about {
   max-width: 1000px;
   margin: 2rem auto;
-  background: #fff5f5;
+  background: #2c2424;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(179,0,0,0.05);
   border: 1px solid #ffcccc;
 }
-/* Force About section into 2 columns */
+
 .about-layout {
   display: flex;
-  flex-direction: row;   /* side-by-side */
   gap: 2rem;
   align-items: center;
 }
 
-/* Image column */
 .about-image {
-  flex: 0 0 220px; /* fixed width column */
+  flex: 0 0 220px;
 }
 
 .about-image img {
@@ -50,59 +63,81 @@ section {
   border: 2px solid #ffcccc;
 }
 
-/* Text column */
 .about-text {
   flex: 1;
 }
 
+/* ---------- PROJECTS + CONTACT ---------- */
+.section-placeholder {
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 10%;
+  background: #0f0f0f;
+  color: white;
+}
+
+.section-placeholder h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* ---------- PROJECT GRID ---------- */
+.project-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.project-card {
+  background: #141414;
+  border: 1px solid #333;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ---------- CONTACT ---------- */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.contact-list li {
+  margin-bottom: 10px;
+}
+
+/* ---------- TYPOGRAPHY ---------- */
 h2 {
   color: #b30000;
 }
 
-form input,
-form textarea {
-  width: 100%;
-  margin-bottom: 1rem;
-  padding: 0.75rem;
-  border: 1px solid #ffcccc;
-  border-radius: 4px;
-  background: #fff0f0;
-  color: #b30000;
-}
-
-form button {
-  background: #b30000;
-  color: #fff;
-  border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background: #ff3333;
-}
-
+/* ---------- FOOTER ---------- */
 footer {
   text-align: center;
   padding: 1rem;
   background: #ffe5e5;
   color: #b30000;
-  margin-top: 2rem;
 }
 
-/* Fade-in animation */
+/* ---------- FADE-IN ---------- */
 .fade {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 2.5s ease, transform 2.5s ease;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .fade.visible {
   opacity: 1;
   transform: translateY(0);
 }
-/* phone*/
+
+/* ---------- MOBILE ---------- */
 @media (max-width: 768px) {
   .about-layout {
     flex-direction: column;
