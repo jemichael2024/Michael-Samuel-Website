@@ -58,7 +58,7 @@
           <li>Skills | Soldering, 3D printing, Mircopipetting, Bench Laboratory Skills  </li>
           <li>Languges | phython, MATLAB, Web development (HTML, CSS, JavaScript)</li>
           <li>Libraries | NumPy, Pandas, Matplotlib</li>
-          <li>Design tool | Solidworks, AutoCAD, Revit</li>
+          <li>Design tools | Solidworks, AutoCAD, Revit</li>
         
         </ul>
       </div>
@@ -74,11 +74,18 @@
 <section id="projects" class="fade section-placeholder">
 
   <h2>Projects</h2>
-  <p>This section will showcase my projects.</p>
+ <div class="project-nav">
+  <a href="#project-histogram">📊 Distribution Fitting Tool</a>
+  <a href="#project-pc-builds">🖥️ Custom PC Systems</a>
+  <a href="#project-uvc">🦠 UV-C Cleaner</a>
+  <a href="#project-wind">🌬️ Wind Energy Harvester</a>
+</div>
+
+
 
   <div class="project-list">
 
-    <div class="project-card fade">
+    <div class="project-card fade" id="project-histogram">
 
   <h3>Interactive Distribution Fitting Tool</h3>
 
@@ -107,11 +114,8 @@
 
  <h4>Project Overview</h4>
       <div class="project-actions">
-
 </div>
-
       <p>
-        
         This project is a browser-based interactive application designed to help users explore how real-world
         datasets align with common probability distributions. Users can input data manually or upload CSV files,
         visualize normalized histograms, and fit multiple statistical distributions in real time.
@@ -168,21 +172,225 @@
     <!-- RIGHT COLUMN: IMAGES -->
     <div class="project-media">
       <img src="images/histogram(1).png" alt="Histogram visualization interface">
-     <img src="images/histogram(2).png" alt="Distribution fitting results">
+      <img src="images/histogram(2).png" alt="Distribution fitting results">
+      <img src="images/graph.png" alt="Distribution fitting results">
     </div>
   </div>
 </div>
-    <div class="project-card fade">
-      <h3>Project Title 2</h3>
-      <p>Short description of what this project is about.</p>
-    </div>
+<div class="project-card fade" id="project-pc-builds">
 
-    <div class="project-card fade">
-      <h3>Project Title 3</h3>
-      <p>Short description of what this project is about.</p>
+  <h3>Custom Computer Systems Design, Upgrades & Optimization</h3>
+
+  <div class="project-grid">
+
+    <!-- LEFT COLUMN: TEXT -->
+    <div class="project-text">
+
+      <h4>How It Started</h4>
+      <p>
+        My interest in computer hardware began with improving my own systems and quickly grew into helping
+        friends and family get more performance out of the machines they already owned. Over time, this
+        turned into regular consulting, upgrading, and building work through word-of-mouth referrals.
+        I found that many performance issues weren’t caused by faulty hardware, but by bottlenecks,
+        thermal limitations, or unbalanced component choices.
+      </p>
+
+      <h4>Upgrades, Repairs & Lifecycle Extension</h4>
+      <p>
+        I upgraded and optimized existing desktops and laptops by replacing thermal paste, adding or
+        upgrading RAM, installing SSDs, and resolving thermal throttling (reducing temps. by up to 25%)
+        or compatibility issues. These targeted improvements often extended system lifespan and delivered
+        noticeable performance gains without requiring a full rebuild.
+      </p>
+
+      <h4>Building From the Ground Up</h4>
+      <p>
+        I designed and assembled complete desktop computer systems from scratch, handling every major
+        component including the CPU, GPU, motherboard, RAM, power supply, storage, cooling, case,
+        and airflow configuration.
+      </p>
+
+      <h4>Component Selection & Bottleneck Prevention</h4>
+      <p>
+        Before any build, I evaluated how individual components would work together to avoid performance
+        bottlenecks and unnecessary overspending.
+      </p>
+
+      <h4>System Assembly, Testing & Validation</h4>
+      <p>
+        All systems were fully assembled and tested end-to-end, including cable management, airflow
+        optimization, thermal testing, and BIOS configuration.
+      </p>
+
+      <h5>Tools & Platforms</h5>
+      <ul class="tool-list">
+        <li>
+          PCPartPicker – compatibility checks<br>
+          <a href="https://pcpartpicker.com/" target="_blank" class="project-link">
+            🔗 Open PCPartPicker
+          </a>
+        </li>
+        <li>
+          Bottleneck analysis tools<br>
+          <a href="https://pcbottleneckcalculator.io/" target="_blank" class="project-link">
+            🔗 Open Bottleneck Calculator
+          </a>
+        </li>
+      </ul>
+
+      <h5>Tips for Users</h5>
+      <ul>
+        <li>A balanced system beats a single overpowered component every time</li>
+        <li>Proper cooling and airflow are critical for sustained performance</li>
+        <li>Planning builds with future upgrades in mind saves money long-term</li>
+      </ul>
+
+    </div>
+  
+    <!-- RIGHT COLUMN: IMAGES -->
+    <div class="project-media">
+      <img src="images/PC1.jpg" alt="PC build interior">
+      <img src="images/PC2.jpeg" alt="Inside and airflow">
+      <img src="images/PC3.jpeg" alt="Completed desktop system">
     </div>
 
   </div>
+</div>
+<div class="project-card fade" id="project-uvc">
+
+  <h3>UV-C Medical Instrument Cleaner</h3>
+
+  <div class="project-grid">
+
+    <!-- LEFT COLUMN: TEXT -->
+    <div class="project-text">
+
+      <p>
+        A sustainable, compact sanitation device designed to reduce plastic waste in dental clinics by enabling
+        safe, on-site sterilization of reusable instruments.
+      </p>
+
+      <h4>Overview</h4>
+      <p>
+        Traditional dental instrument sterilization relies on single-use plastic packaging and off-site cleaning,
+        generating significant waste and operational inefficiencies. This project explores a reusable,
+        sealed sanitation system that integrates steam cleaning and UV-C disinfection to allow instruments
+        to be safely cleaned on-site.
+      </p>
+
+      <h4>Problem</h4>
+      <ul>
+        <li>Dental clinics generate large volumes of single-use plastic waste</li>
+        <li>Packaging materials are difficult to recycle</li>
+        <li><strong>22.3 g of plastic per patient</strong></li>
+        <li><strong>2,000+ disposable units</strong> per clinic annually</li>
+        <li>Reusable instruments require off-site sterilization</li>
+      </ul>
+
+      <h4>Design Goals</h4>
+      <ul>
+        <li><strong>Sustainability:</strong> Reduce single-use plastics</li>
+        <li><strong>Ease of Use:</strong> Compact and clinic-friendly</li>
+        <li><strong>Safety:</strong> Eliminate pathogens without exposure</li>
+      </ul>
+
+      <h4>Solution</h4>
+      <p>
+        The final design combines steam cleaning with UV-C light disinfection inside a sealed aluminum enclosure.
+        UV-C light (100–280 nm) disrupts DNA replication in microorganisms, while reflective aluminum
+        improves sanitation efficiency.
+      </p>
+
+      <h4>Final Design</h4>
+      <ul>
+        <li><strong>Device:</strong> UV-C Medical Instrument Cleaner</li>
+        <li><strong>Dimensions:</strong> 2″ × 2″ × 8″</li>
+        <li><strong>Components:</strong> Body, Drawer, UV-C Light System</li>
+      </ul>
+
+      <h4>Outcome & Impact</h4>
+      <p>
+        This project demonstrates how sealed UV-C sanitation can reduce plastic waste while maintaining
+        medical safety standards. The modular design supports scalability and broader healthcare use.
+      </p>
+      <h4>In Depth Presentation</h4>
+        <div class="pdf-container">
+          <iframe
+            src="files/Slides.pdf"
+            loading="lazy">
+          </iframe>
+        </div>
+    </div>
+
+    <!-- RIGHT COLUMN: IMAGES -->
+    <div class="project-media">
+      <img src="images/proj2.png" alt="Internal layout">
+      <img src="images/proj1.png" alt="UV-C cleaner concept">
+      <img src="images/proj3.png" alt="Drawer mechanism">
+      <img src="images/proj4.png" alt="Final assembled design">
+    </div>
+
+  </div>
+</div>
+
+<div class="project-card fade" id="project-wind">
+  <h3>Portable Wind-Powered Energy Harvester</h3>
+
+  <div class="project-grid">
+
+    <!-- LEFT COLUMN: TEXT -->
+    <div class="project-text">
+
+      <h4>Project Overview</h4>
+      <p>
+        This project explores small-scale renewable energy generation through the triboelectric effect,
+        converting ambient wind motion into usable electrical energy. The goal was to design a portable,
+        off-grid power solution suitable for outdoor, emergency, and wilderness applications where
+        conventional power sources are unavailable.
+      </p>
+
+      <h4>Concept & Motivation</h4>
+      <p>
+        Many portable energy solutions rely on batteries or solar panels, which can be unreliable in
+        shaded or remote environments. A wind-powered triboelectric nanogenerator offers a lightweight,
+        mechanically simple alternative that harvests energy from everyday environmental motion.
+      </p>
+
+      <h4>How It Works</h4>
+      <ul>
+        <li>Wind induces mechanical motion within the system</li>
+        <li>Contact and separation between triboelectric layers transfers charge</li>
+        <li>The resulting electrostatic potential is collected as electrical output</li>
+        <li>The prototype achieved a peak output of <strong>3.4 V</strong> under wind excitation</li>
+      </ul>
+
+      <h4>Design & Engineering</h4>
+      <p>
+        The mechanical system was fully modeled and iterated in SolidWorks, with emphasis on component
+        fit and alignment, efficient motion transfer under low wind speeds, and a compact, portable
+        form factor. Multiple design iterations were tested to improve stability, durability, and
+        electrical output.
+      </p>
+
+      <h4>Outcome</h4>
+      <p>
+        The final design demonstrates the feasibility of wind-driven triboelectric energy harvesting
+        for portable, off-grid applications. While optimized for low-power output, the system highlights
+        the potential of TENG technology as a supplement to traditional renewable energy sources,
+        particularly in environments where solar or battery solutions fall short.
+      </p>
+
+    </div>
+
+    <!-- RIGHT COLUMN: IMAGES -->
+    <div class="project-media">
+      <img src="images/teng.png" alt="Triboelectric energy harvester concept">
+      <img src="images/teng2.png" alt="Mechanical design and motion system">
+    </div>
+
+  </div>
+</div>
+</div>
 </section>
 
 <!-- CONTACT SECTION -->

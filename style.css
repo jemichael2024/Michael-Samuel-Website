@@ -15,7 +15,20 @@ body {
   background: #241f1f;
   color: #0c0101;
 }
+/* ---------- RESPONSIVE TYPOGRAPHY ---------- */
+h1 {
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  line-height: 1.1;
+}
 
+h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+}
 /* ---------- HEADER ---------- */
 header {
   background: #b30000;
@@ -76,7 +89,6 @@ nav a {
 }
 
 #about h2 {
-  font-size: 2.4rem;
   font-weight: 700;
 }
 
@@ -95,7 +107,6 @@ nav a {
 }
 
 .section-placeholder h2 {
-  font-size: 3rem;
   margin-bottom: 20px;
 }
 
@@ -177,6 +188,28 @@ nav a {
   background: #ff3333;
   transform: translateY(-2px);
 }
+.project-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0 40px;
+}
+
+.project-nav a {
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #2f2a2a;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.project-nav a:hover {
+  background: #444;
+  transform: translateY(-2px);
+}
+
 
 
 /* Project images */
@@ -194,10 +227,13 @@ nav a {
 /* ---------- PROJECT TWO-COLUMN LAYOUT ---------- */
 .project-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 32px;
-  margin-top: 20px;
+  align-items: start; /* 👈 key fix */
 }
+
+
+
 
 /* LEFT TEXT COLUMN */
 .project-text h4 {
@@ -222,36 +258,36 @@ nav a {
 }
 
 /* RIGHT IMAGE COLUMN */
+/* RIGHT IMAGE COLUMN */
 .project-media {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
+
 .project-media img {
-  width: 100%;
+   width: 100%;
+  max-height: 320px;   /* 👈 controls size consistently */
+  object-fit: contain;
   border-radius: 12px;
   border: 1px solid #333;
-  object-fit: cover;
-}
-
-.project-media {
-  display: flex;
-  flex-direction: column;
-  gap: 15rem;              /* space between images */
-}
-
-.project-media img {
-  width: 100%;
-  border-radius: 15px;
+  background: #0f0f0f;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.project-media img {
+  flex: 1;
+}
+
+
+
 .project-media img:hover {
   transform: scale(1.02);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
+
 .lightbox {
   position: fixed;
   inset: 0;
@@ -275,6 +311,22 @@ nav a {
   max-height: 90%;
   border-radius: 12px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+/* ---------- PDF EMBED ---------- */
+.pdf-container {
+  margin-top: 24px;
+  width: 100%;
+  height: 520px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #333;
+  background: #0f0f0f;
+}
+
+.pdf-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* ---------- FORMULA STYLING ---------- */
@@ -341,6 +393,9 @@ footer {
 .fade.visible {
   opacity: 1;
   transform: translateY(0);
+}
+html {
+  scroll-behavior: smooth;
 }
 
 /* ---------- MOBILE ---------- */
