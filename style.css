@@ -1,22 +1,19 @@
+/* ---------- RESET ---------- */
 * {
   box-sizing: border-box;
 }
 
 html, body {
   width: 100%;
-  overflow-x: hidden; /* 🚫 no side-to-side scrolling */
+  overflow-x: hidden;
   margin: 0;
-}
-/* ---------- GLOBAL ---------- */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #241f1f;
-  color: #0c0101;
 }
 
-section {
-  display: block;
+/* ---------- GLOBAL ---------- */
+body {
+  font-family: "Roboto", sans-serif;
+  background: #241f1f;
+  color: #0c0101;
 }
 
 /* ---------- HEADER ---------- */
@@ -33,18 +30,29 @@ nav a {
   color: #fff;
   margin-left: 1rem;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 /* ---------- ABOUT ---------- */
 #about {
   max-width: 1000px;
   margin: 2rem auto;
-  background: #2c2424;
   padding: 2rem;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("images/qnc_panorama.avif") center / 190% 100% no-repeat;
+
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(179,0,0,0.05);
   border: 1px solid #ffcccc;
+  color: white;
+}
+
+.about-card {
+  background: rgba(20, 20, 20, 0.9);
+  padding: 2rem;
+  border-radius: 12px;
 }
 
 .about-layout {
@@ -67,7 +75,17 @@ nav a {
   flex: 1;
 }
 
-/* ---------- PROJECTS + CONTACT ---------- */
+#about h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+#about p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* ---------- PROJECTS & CONTACT ---------- */
 .section-placeholder {
   width: 100%;
   min-height: 100vh;
@@ -77,11 +95,11 @@ nav a {
 }
 
 .section-placeholder h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 20px;
 }
 
-/* ---------- PROJECT GRID ---------- */
+/* ---------- PROJECTS ---------- */
 .project-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -94,27 +112,215 @@ nav a {
   border: 1px solid #333;
   padding: 20px;
   border-radius: 12px;
-  transition: transform 0.3s ease;
+}
+.project-card h4 {
+  margin-top: 1.6rem;
+  margin-bottom: 0.4rem;
+  color: #ffcccc;
+  font-size: 1.2rem;
 }
 
-.project-card:hover {
-  transform: translateY(-6px);
+.project-card p {
+  line-height: 1.7;
+  font-size: 1rem;
+  color: #eaeaea;
 }
 
-/* ---------- CONTACT ---------- */
-.contact-list {
-  list-style: none;
-  padding: 0;
+.project-card ul {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+}
+
+.project-card li {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+.project-actions {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.project-link {
+  display: inline-block;
+  background: linear-gradient(135deg, #b30000, #ff3333);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.download-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #b30000, #ff3333);
+  color: white;
+  font-weight: 500;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.5);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.project-link:hover {
+  background: #ff3333;
+  transform: translateY(-2px);
+}
+
+
+/* Project images */
+.project-image {
+  margin: 20px 0;
+}
+
+.project-image img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+/* ---------- PROJECT TWO-COLUMN LAYOUT ---------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 32px;
   margin-top: 20px;
 }
 
-.contact-list li {
-  margin-bottom: 10px;
+/* LEFT TEXT COLUMN */
+.project-text h4 {
+  margin-top: 1.4rem;
+  margin-bottom: 0.4rem;
+  color: #ffcccc;
+  font-size: 1.2rem;
 }
 
-/* ---------- TYPOGRAPHY ---------- */
-h2 {
-  color: #b30000;
+.project-text p {
+  line-height: 1.7;
+  font-size: 1rem;
+  color: #eaeaea;
+}
+
+.project-text ul {
+  padding-left: 1.2rem;
+}
+
+.project-text li {
+  margin-bottom: 0.7rem;
+}
+
+/* RIGHT IMAGE COLUMN */
+.project-media {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-media img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #333;
+  object-fit: cover;
+}
+
+.project-media {
+  display: flex;
+  flex-direction: column;
+  gap: 15rem;              /* space between images */
+}
+
+.project-media img {
+  width: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-media img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* ---------- FORMULA STYLING ---------- */
+.formula-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #ffcccc;
+  padding: 12px 16px;
+  margin: 16px 0;
+  border-radius: 6px;
+}
+
+.formula-box code {
+  display: block;
+  font-family: "Courier New", monospace;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-media img {
+    max-height: 260px;
+  }
+}
+
+
+
+/* ---------- CONTACT ---------- */
+.contact-form {
+  max-width: 500px;
+  margin-top: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  border: 1px solid #ffcccc;
+  font-size: 1rem;
 }
 
 /* ---------- FOOTER ---------- */
@@ -125,11 +331,11 @@ footer {
   color: #b30000;
 }
 
-/* ---------- FADE-IN ---------- */
+/* ---------- ANIMATION ---------- */
 .fade {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
+  transition: 1s ease;
 }
 
 .fade.visible {

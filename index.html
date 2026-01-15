@@ -4,8 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Michael Samuel Dela Cruz - Portfolio</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
+
+<div id="lightbox" class="lightbox">
+  <img id="lightbox-img" src="" alt="Expanded view">
+</div>
 
 <body>
 
@@ -33,20 +44,22 @@
         <h2>About Me</h2>
 
         <p>
-          I’m a student with strong interests in engineering, architecture, and creative design.
-          I enjoy turning ideas into real projects and learning through hands-on building.
+          I’m an engineering student at the University of Waterloo, studying the field of nanotechnology who enjoys solving problems, learning fast, 
+          and figuring out how things work and why they sometimes don’t. I’m naturally curious, detail-oriented, and happiest when I’m building, analyzing, or improving something tangible. 
+          I bring a mix of technical thinking and practical common sense.
         </p>
 
         <p>
-          I’m currently focused on developing my technical skills, especially in web development,
-          while building a portfolio that reflects both creativity and problem-solving.
+          I’m comfortable working both independently and on teams where communication actually matters. I take my work seriously, but not myself. 
+          I believe good engineering comes from asking smart questions, staying adaptable, and accepting that the best solutions rarely work perfectly the first time
         </p>
 
         <ul>
-          <li>Web development (HTML, CSS, JavaScript)</li>
-          <li>Design and visual creativity</li>
-          <li>Architecture and physical modeling</li>
-          <li>Technical problem-solving</li>
+          <li>Skills | Soldering, 3D printing, Mircopipetting, Bench Laboratory Skills  </li>
+          <li>Languges | phython, MATLAB, Web development (HTML, CSS, JavaScript)</li>
+          <li>Libraries | NumPy, Pandas, Matplotlib</li>
+          <li>Design tool | Solidworks, AutoCAD, Revit</li>
+        
         </ul>
       </div>
 
@@ -66,10 +79,99 @@
   <div class="project-list">
 
     <div class="project-card fade">
-      <h3>Project Title 1</h3>
-      <p>Short description of what this project is about.</p>
-    </div>
 
+  <h3>Interactive Distribution Fitting Tool</h3>
+
+  <div class="project-grid">
+
+    <!-- LEFT COLUMN: TEXT -->
+    <div class="project-text">
+
+     
+  <a 
+    href="https://histogram-fitter-deximafukjegxrdtzr8nbs.streamlit.app"
+    target="_blank"
+    class="project-link"
+  >
+    🔗 Open Histogram Fitter App
+  </a>
+  <p>
+  <a href="data/exponential_sample.csv" download class="download-btn">
+  ⬇ Download Exponential Dataset (CSV)
+</a>
+  <p class="dataset-note">
+  Sample data generated from an exponential distribution (λ = 1).
+</p>
+
+</p>
+
+ <h4>Project Overview</h4>
+      <div class="project-actions">
+
+</div>
+
+      <p>
+        
+        This project is a browser-based interactive application designed to help users explore how real-world
+        datasets align with common probability distributions. Users can input data manually or upload CSV files,
+        visualize normalized histograms, and fit multiple statistical distributions in real time.
+      </p>
+
+      <h4>Problem Motivation</h4>
+      <p>
+        In many introductory statistics and engineering courses, distribution fitting software outputs parameters, 
+        but users rarely understand how or why a particular distribution fits better than another. I wanted to build a tool that makes distribution 
+        fitting transparent, interactive, and exploratory, allowing users to visually and quantitatively see how parameter changes 
+        affect model quality and data interpretation.
+      </p>
+
+      <h4>Key Features</h4>
+      <ul>
+        <li>Manual data entry and robust CSV uploads</li>
+        <li>Maximum likelihood estimation using SciPy</li>
+        <li>Interactive parameter sliders</li>
+        <li>Quantitative fit evaluation (MAE, MSE, R²)</li>
+      </ul>
+      <h4>Mathematical Model</h4>
+
+<p>
+  The application models empirical data using continuous probability density functions.
+  For a given distribution, parameters are estimated using maximum likelihood estimation (MLE),
+  and the resulting probability density function is evaluated as:
+</p>
+
+<div class="formula-box">
+  <p><strong>General PDF:</strong></p>
+  <code>
+    f(x | θ) = probability density given parameters θ
+  </code>
+</div>
+
+<div class="formula-box">
+  <p><strong>Model Evaluation:</strong></p>
+  <code>
+    MSE = (1 / n) Σ (yᵢ − ŷᵢ)²
+  </code>
+</div>
+
+<p>
+  These metrics are computed over histogram bin centers to quantitatively assess
+  the goodness of fit between empirical data and theoretical models.
+</p>
+
+
+      <h4>Tech Stack</h4>
+      <p>Python, NumPy, pandas, SciPy, Matplotlib, Streamlit</p>
+
+  </div>
+
+    <!-- RIGHT COLUMN: IMAGES -->
+    <div class="project-media">
+      <img src="images/histogram(1).png" alt="Histogram visualization interface">
+     <img src="images/histogram(2).png" alt="Distribution fitting results">
+    </div>
+  </div>
+</div>
     <div class="project-card fade">
       <h3>Project Title 2</h3>
       <p>Short description of what this project is about.</p>
@@ -90,10 +192,35 @@
   <p>Feel free to reach out.</p>
 
   <ul class="contact-list">
-    <li>Email: yourname@email.com</li>
-    <li>LinkedIn: coming soon</li>
-    <li>GitHub: coming soon</li>
+    <li>Email: msdelacr@uwaterloo.com</li>
+    <li>LinkedIn: www.linkedin.com/in/micsam</li>
+    <li>GitHub: https://github.com/jemichael2024</li>
   </ul>
+<form class="contact-form" action="mailto:msdelacr@uwaterloo.ca" method="post" enctype="text/plain">
+  <input 
+    type="text" 
+    name="name" 
+    placeholder="Your name" 
+    required
+  >
+
+  <input 
+    type="email" 
+    name="email" 
+    placeholder="Your email" 
+    required
+  >
+
+  <textarea 
+    name="message" 
+    placeholder="Your message"
+    rows="5"
+    required
+  ></textarea>
+
+  <button type="submit">Send Message</button>
+
+</form>
 
 </section>
 
