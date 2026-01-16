@@ -17,12 +17,12 @@ body {
 }
 /* ---------- RESPONSIVE TYPOGRAPHY ---------- */
 h1 {
-  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  font-size: clamp(2rem, 6vw, 4.5rem);
   line-height: 1.1;
 }
 
 h2 {
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(3rem, 4vw, 3rem);
   line-height: 1.2;
 }
 
@@ -37,6 +37,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 nav a {
@@ -44,12 +45,50 @@ nav a {
   margin-left: 1rem;
   text-decoration: none;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.5rem;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #b30000;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.header-left h1 {
+  margin: 0;
+  white-space: nowrap;
+  font-size: 2.5rem;   /* 👈 smaller name */
+  font-weight: 500;
+}
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.3rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: #ffcccc;
+  transform: translateY(-2px);
 }
 
 /* ---------- ABOUT ---------- */
 #about {
-  max-width: 1000px;
+  max-width: 1300px;
+  max-height: 500px;
   margin: 2rem auto;
   padding: 2rem;
 
@@ -79,7 +118,7 @@ nav a {
 }
 
 .about-image img {
-  width: 100%;
+  width: 90%;
   border-radius: 12px;
   border: 2px solid #ffcccc;
 }
@@ -89,7 +128,8 @@ nav a {
 }
 
 #about h2 {
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 2rem;
 }
 
 #about p {
@@ -454,5 +494,29 @@ body {
 /* Hide system cursor EVERYWHERE */
 * {
   cursor: none !important;
+}
+/* ---------- HEADER ---------- */
+.header {
+  display: flex;
+  justify-content: center; /* 👈 bring everything inward */
+  align-items: center;
+  gap: 3rem;               /* controls spacing between groups */
+}
+
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 2rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-2px);
+  color: #ffcccc;
 }
 
