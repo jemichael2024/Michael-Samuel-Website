@@ -65,7 +65,7 @@ nav a {
 .header-left h1 {
   margin: 0;
   white-space: nowrap;
-  font-size: 2.5rem;   /* 👈 smaller name */
+  font-size: 2.5rem;   
   font-weight: 500;
 }
 
@@ -269,7 +269,7 @@ nav a {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 32px;
-  align-items: start; /* 👈 key fix */
+  align-items: start; /* key fix */
 }
 
 
@@ -308,7 +308,7 @@ nav a {
 
 .project-media img {
    width: 100%;
-  max-height: 320px;   /* 👈 controls size consistently */
+  max-height: 320px;   /* controls size consistently */
   object-fit: contain;
   border-radius: 12px;
   border: 1px solid #333;
@@ -447,14 +447,6 @@ html {
   transform: none;
 }
 
-/* ---------- MOBILE ---------- */
-@media (max-width: 768px) {
-  .about-layout {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
 #cursor {
   width: 12px;
   height: 12px;
@@ -498,7 +490,7 @@ body {
 /* ---------- HEADER ---------- */
 .header {
   display: flex;
-  justify-content: center; /* 👈 bring everything inward */
+  justify-content: center; /* bring everything inward */
   align-items: center;
   gap: 3rem;               /* controls spacing between groups */
 }
@@ -520,3 +512,53 @@ body {
   color: #ffcccc;
 }
 
+@media (max-width: 768px) {
+
+  /* About section spacing */
+  #about {
+    padding: 1.2rem;
+    max-height: none;
+    background-size: cover;
+  }
+
+  .about-card {
+    padding: 1.4rem;
+  }
+
+  /* Stack image above text */
+  .about-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  /* Center image */
+  .about-image {
+    flex: none;
+    width: 160px;
+  }
+
+  .about-image img {
+    width: 100%;
+  }
+
+  /* Center text */
+  .about-text {
+    text-align: center;
+  }
+
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Skills list readability */
+  .about-text ul {
+    text-align: left;
+    font-size: 0.95rem;
+  }
+}
