@@ -603,6 +603,60 @@ footer {
   #cursor, .trail { display: none !important; }
 }
 
+/* ---------- EXPERIENCE ---------- */
+.section-alt {
+  background: #161212;
+}
+
+.project-summary.no-thumb {
+  grid-template-columns: 1fr;
+}
+
+.exp-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 16px;
+}
+
+.exp-head h3 {
+  margin: 0;
+}
+
+.exp-dates {
+  color: #aaa;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.exp-org {
+  margin: 4px 0 10px;
+  color: var(--pink);
+  font-weight: 500;
+}
+
+.exp-detail {
+  padding: 4px 24px 24px;
+  border-top: 1px solid var(--border);
+}
+
+.exp-detail h4 {
+  margin: 1.2rem 0 0.4rem;
+  color: var(--pink);
+  font-size: 1.2rem;
+}
+
+.exp-detail ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.exp-detail li {
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+}
+
 /* ---------- TABLET ---------- */
 @media (max-width: 900px) {
   .project-summary {
@@ -684,7 +738,8 @@ footer {
     font-size: 1.25rem;
   }
 
-  .project-grid {
+  .project-grid,
+  .exp-detail {
     padding: 0 16px 20px;
   }
 
@@ -725,4 +780,8 @@ footer {
   .contact-value {
     font-size: 0.8rem;
   }
+}
+
+.section-hint + .project-list {
+  margin-top: 28px;
 }
