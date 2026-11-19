@@ -47,6 +47,31 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ======================
+     Scroll reveal animations
+  ====================== */
+  const revealTargets = document.querySelectorAll(
+    ".section-dark > h2, .section-hint, .project-nav, .project-card, .contact-card, .about-text"
+  );
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (reduce || !("IntersectionObserver" in window)) {
+    revealTargets.forEach(el => el.classList.add("in-view"));
+  } else {
+    // Stagger items that sit side by side (contact cards)
+    document.querySelectorAll(".contact-card").forEach((el, i) => el.style.setProperty("--delay", `${i * 0.08}s`));
+    revealTargets.forEach(el => el.classList.add("reveal"));
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    revealTargets.forEach(el => io.observe(el));
+  }
+
+  /* ======================
      Custom cursor dot + trail (desktop mouse only)
   ====================== */
   const cursor = document.getElementById("cursor");

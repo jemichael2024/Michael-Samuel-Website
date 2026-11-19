@@ -25,22 +25,54 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 
 <body>
+<!-- Animated background: glowing orbs + spinning red carbon nanotubes (decorative) -->
+<div class="bg-anim" aria-hidden="true">
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <pattern id="honeycomb" width="30" height="17.32" patternUnits="userSpaceOnUse">
+        <path d="M0,8.66 L5,0 L15,0 L20,8.66 L15,17.32 L5,17.32 Z M20,8.66 L30,8.66" fill="none" stroke="#ff3b3b" stroke-width="1.6"/>
+        <animateTransform attributeName="patternTransform" type="translate" from="0 0" to="0 17.32" dur="2.4s" repeatCount="indefinite"/>
+      </pattern>
+      <linearGradient id="tubeShade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#000" stop-opacity="0.75"/>
+        <stop offset="0.45" stop-color="#000" stop-opacity="0"/>
+        <stop offset="0.55" stop-color="#000" stop-opacity="0"/>
+        <stop offset="1" stop-color="#000" stop-opacity="0.75"/>
+      </linearGradient>
+      <symbol id="cnt" viewBox="0 0 360 80">
+        <rect x="2" y="2" width="356" height="76" rx="38" fill="rgba(179,0,0,0.12)"/>
+        <rect x="2" y="2" width="356" height="76" rx="38" fill="url(#honeycomb)"/>
+        <rect x="2" y="2" width="356" height="76" rx="38" fill="url(#tubeShade)"/>
+        <rect x="2" y="2" width="356" height="76" rx="38" fill="none" stroke="#ff4d4d" stroke-width="2"/>
+      </symbol>
+    </defs>
+  </svg>
+  <span class="orb orb-1"></span>
+  <span class="orb orb-2"></span>
+  <span class="orb orb-3"></span>
+  <svg class="cnt cnt-1"><use href="#cnt"/></svg>
+  <svg class="cnt cnt-2"><use href="#cnt"/></svg>
+  <svg class="cnt cnt-3"><use href="#cnt"/></svg>
+  <svg class="cnt cnt-4"><use href="#cnt"/></svg>
+  <svg class="cnt cnt-5"><use href="#cnt"/></svg>
+</div>
 <div id="lightbox" class="lightbox">
   <img id="lightbox-img" src="" alt="Expanded view">
 </div>
 <div id="cursor"></div>
 
 <header class="header">
-  <h1 class="site-name">Michael Samuel Dela Cruz</h1>
+  <a class="site-brand" href="#about"><span class="brand-badge">MS</span><h1 class="site-name">Michael Samuel Dela Cruz</h1></a>
   <div class="header-right">
     <nav>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#about"><i class="fas fa-user"></i><span>About</span></a>
+      <a href="#experience"><i class="fas fa-briefcase"></i><span>Experience</span></a>
+      <a href="#projects"><i class="fas fa-flask"></i><span>Projects</span></a>
+      <a href="#contact"><i class="fas fa-paper-plane"></i><span>Contact</span></a>
     </nav>
     <div class="social-icons">
       <a href="https://linkedin.com/in/micsam" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -64,13 +96,7 @@
     </div>
 
     <div class="about-text">
-      <div class="section-banner">
-    <span class="banner-icon"><i class="fas fa-user"></i></span>
-    <div class="banner-text">
       <h3>About Me</h3>
-      <p>Who I am and what I work with</p>
-    </div>
-  </div>
       <p>
         I’m an engineering student at the University of Waterloo, studying nanotechnology and excited to get my iron ring in 2030!
       </p>
@@ -98,13 +124,8 @@
 
 <!-- EXPERIENCE SECTION -->
 <section id="experience" class="section-dark section-alt">
-  <div class="section-banner">
-    <span class="banner-icon"><i class="fas fa-briefcase"></i></span>
-    <div class="banner-text">
-      <h2>Experience</h2>
-      <p>Click any role to see the full details</p>
-    </div>
-  </div>
+  <h2>Experience</h2>
+  <p class="section-hint">Click any role to see the full details.</p>
 
   <div class="project-list">
     <details class="project-card exp-card" id="exp-research">
@@ -210,13 +231,8 @@
 <!-- PROJECTS SECTION -->
 <section id="projects" class="section-dark">
 
-  <div class="section-banner">
-    <span class="banner-icon"><i class="fas fa-flask"></i></span>
-    <div class="banner-text">
-      <h2>Projects</h2>
-      <p>Click any project to see the full write-up</p>
-    </div>
-  </div>
+  <h2>Projects</h2>
+  <p class="section-hint">Click any project to see the full write-up.</p>
 
   <div class="project-nav">
     <a href="#project-uvc">🦠 UV-C Cleaner</a>
@@ -537,13 +553,8 @@
 
 <!-- CONTACT SECTION -->
 <section id="contact" class="section-dark">
-  <div class="section-banner">
-    <span class="banner-icon"><i class="fas fa-paper-plane"></i></span>
-    <div class="banner-text">
-      <h2>Contact</h2>
-      <p>Feel free to reach out. Email is the fastest way to reach me.</p>
-    </div>
-  </div>
+  <h2>Contact</h2>
+  <p>Feel free to reach out. Email is the fastest way to reach me.</p>
 
   <div class="contact-cards">
     <a class="contact-card" href="mailto:msdelacr@uwaterloo.ca">
