@@ -163,18 +163,11 @@ nav a:hover {
 }
 
 .hero-kicker {
-  margin: 0 0 10px;
+  margin: 0 0 1.25rem;
+  font-size: 1.15rem;
   color: var(--pink);
   font-weight: 500;
   letter-spacing: 0.03em;
-}
-
-.hero-pitch {
-  font-size: clamp(1.5rem, 3.2vw, 2.4rem);
-  font-weight: 500;
-  line-height: 1.25;
-  margin: 0 0 1.5rem;
-  max-width: 900px;
 }
 
 .hero-buttons {
