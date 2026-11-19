@@ -3,459 +3,449 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Michael Samuel Dela Cruz - Portfolio</title>
+  <title>Michael Samuel Dela Cruz | Nanotechnology Engineering, UWaterloo</title>
+  <meta name="description" content="Portfolio of Michael Samuel Dela Cruz, Nanotechnology Engineering student at the University of Waterloo. Projects in UV-C sterilization, triboelectric energy harvesting, data tools and PC hardware.">
+
+  <!-- Link previews (LinkedIn, Discord, iMessage, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://micsam.me/">
+  <meta property="og:title" content="Michael Samuel Dela Cruz | Engineering Portfolio">
+  <meta property="og:description" content="Nanotechnology Engineering student at the University of Waterloo. See my projects, resume and contact info.">
+  <meta property="og:image" content="https://micsam.me/images/proj4.webp">
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
- 
-  <!-- icons -->
+
+  <!-- Icon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
-  <link rel="icon" href="images/favicon-v2.png">
-  <link rel="icon" href="favicon.png" type="image/png">
 
   <!-- Font Awesome Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Your CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 <div id="lightbox" class="lightbox">
   <img id="lightbox-img" src="" alt="Expanded view">
 </div>
 <div id="cursor"></div>
-<header class="header">
-  <div class="header-left">
-    <h1>Michael Samuel Dela Cruz</h1>
-  </div>
-  <div class="social-icons">
-    <a href="https://linkedin.com/in/micsam" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/jemichael2024" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="mailto:msdelacr@uwaterloo.ca"><i class="fas fa-envelope"></i></a>
-  </div>
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
 
+<header class="header">
+  <h1 class="site-name">Michael Samuel Dela Cruz</h1>
+  <div class="header-right">
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="social-icons">
+      <a href="https://linkedin.com/in/micsam" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/jemichael2024" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="mailto:msdelacr@uwaterloo.ca" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
 </header>
 
-
-<!-- ABOUT SECTION -->
-<section id="about" class="fade section-placeholder">
-
+<!-- HERO / ABOUT -->
+<section id="about">
   <div class="about-card">
 
-    <div class="about-layout">
+    <div class="hero">
+      <p class="hero-kicker">Nanotechnology Engineering · University of Waterloo</p>
+      <h2 class="hero-pitch">Engineering student who builds, tests and improves real hardware, and is looking for a co-op placement.</h2>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="files/Resume.pdf" target="_blank" rel="noopener"><i class="fas fa-file-arrow-down"></i> Resume</a>
+        <a class="btn" href="https://linkedin.com/in/micsam" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a class="btn" href="mailto:msdelacr@uwaterloo.ca"><i class="fas fa-envelope"></i> Email</a>
+      </div>
+    </div>
 
-      <div class="about-text">
-        <h2>About Me</h2>
-
+    <div class="about-text">
+      <h3>About Me</h3>
       <p>
-        I’m an engineering student at the University of Waterloo, studying the field of nanotechnology and excited to get my iron ring in 2030!
+        I’m an engineering student at the University of Waterloo, studying nanotechnology and excited to get my iron ring in 2030!
       </p>
-
       <p>
-        I enjoy solving problems, learning fast, and figuring out how things work and why they sometimes don’t. I’m naturally curious, detail-oriented, and happiest when I’m building, analyzing, or improving something tangible. 
+        I enjoy solving problems, learning fast, and figuring out how things work and why they sometimes don’t. I’m naturally curious, detail-oriented, and happiest when I’m building, analyzing, or improving something tangible.
         I bring a mix of technical thinking and practical common sense.
       </p>
-
       <p>
-        I’m comfortable working both independently and on teams where communication matters. I take my work seriously, but not myself. 
+        I’m comfortable working both independently and on teams where communication matters. I take my work seriously, but not myself.
         I believe good engineering comes from always questioning, staying adaptable, and accepting that the best solutions rarely work perfectly the first time.
       </p>
 
-        <ul>
-          <li>Relevant Coursework | Calculus I, Calculus II, Linear Algebra,
-          Classical Mechanics, Linear Circuits, Materials Science, Computational Methods. </li>
-          <li>Skills | Soldering, 3D printing, Micropipetting, Bench Laboratory Skills  </li>
-          <li>Languages | Python, MATLAB, Web development (HTML, CSS, JavaScript)</li>
-          <li>Libraries | NumPy, Pandas, Matplotlib</li>
-          <li>Design tools | Solidworks, AutoCAD, Revit</li>
-        
-        </ul>
-      </div>
-
+      <dl class="skills">
+        <div><dt>Coursework</dt><dd>Calculus I &amp; II, Linear Algebra, Classical Mechanics, Linear Circuits, Materials Science, Computational Methods</dd></div>
+        <div><dt>Lab &amp; Shop</dt><dd>Soldering, 3D printing, Micropipetting, Bench laboratory skills</dd></div>
+        <div><dt>Languages</dt><dd>Python, MATLAB, HTML, CSS, JavaScript</dd></div>
+        <div><dt>Libraries</dt><dd>NumPy, Pandas, Matplotlib</dd></div>
+        <div><dt>Design Tools</dt><dd>SolidWorks, AutoCAD, Revit</dd></div>
+      </dl>
     </div>
 
   </div>
-
 </section>
 
 
 <!-- PROJECTS SECTION -->
-<section id="projects" class="fade section-placeholder">
+<section id="projects" class="section-dark">
 
   <h2>Projects</h2>
- <div class="project-nav">
-  <a href="#project-histogram">📊 Distribution Fitting Tool</a>
-  <a href="#project-pc-builds">🖥️ Custom PC Systems</a>
-  <a href="#project-uvc">🦠 UV-C Cleaner</a>
-  <a href="#project-wind">🌬️ Wind Energy Harvester</a>
-</div>
+  <p class="section-hint">Click any project to see the full write-up.</p>
 
-
+  <div class="project-nav">
+    <a href="#project-uvc">🦠 UV-C Cleaner</a>
+    <a href="#project-wind">🌬️ Wind Energy Harvester</a>
+    <a href="#project-histogram">📊 Distribution Fitting Tool</a>
+    <a href="#project-pc-builds">🖥️ Custom PC Systems</a>
+  </div>
 
   <div class="project-list">
 
-    <div class="project-card fade" id="project-histogram">
-
-  <h3>Interactive Distribution Fitting Tool</h3>
-
-  <div class="project-grid">
-
-    <!-- LEFT COLUMN: TEXT -->
-    <div class="project-text">
-  <a 
-    href="https://histogram-fitter-deximafukjegxrdtzr8nbs.streamlit.app"
-    target="_blank"
-    class="project-link"
-  >
-    🔗 Open Histogram Fitter App
-  </a>
-  <p>
-  <a href="data/exponential_sample.csv" download class="download-btn">
-  ⬇ Download Exponential Dataset (CSV)
-</a>
-  <p class="dataset-note">
-  Sample data generated from an exponential distribution (λ = 1).
-</p>
-
-</p>
-
- <h4>Project Overview</h4>
-      <div class="project-actions">
-</div>
-      <p>
-        This project is a browser-based interactive application designed to help users explore how real-world
-        datasets align with common probability distributions. Users can input data manually or upload CSV files,
-        visualize normalized histograms, and fit multiple statistical distributions in real time.
-      </p>
-
-      <h4>Problem Motivation</h4>
-      <p>
-        In many introductory statistics and engineering courses, distribution fitting software outputs parameters, 
-        but users rarely understand how or why a particular distribution fits better than another. I wanted to build a tool that makes distribution 
-        fitting transparent, interactive, and exploratory, allowing users to visually and quantitatively see how parameter changes 
-        affect model quality and data interpretation.
-      </p>
-
-      <h4>Key Features</h4>
-      <ul>
-        <li>Manual data entry and robust CSV uploads</li>
-        <li>Maximum likelihood estimation using SciPy</li>
-        <li>Interactive parameter sliders</li>
-        <li>Quantitative fit evaluation (MAE, MSE, R²)</li>
-      </ul>
-      <h4>Mathematical Model</h4>
-
-<p>
-  The application models empirical data using continuous probability density functions.
-  For a given distribution, parameters are estimated using maximum likelihood estimation (MLE),
-  and the resulting probability density function is evaluated as:
-</p>
-
-<div class="formula-box">
-  <p><strong>General PDF:</strong></p>
-  <code>
-    f(x | θ) = probability density given parameters θ
-  </code>
-</div>
-
-<div class="formula-box">
-  <p><strong>Model Evaluation:</strong></p>
-  <code>
-    MSE = (1 / n) Σ (yᵢ − ŷᵢ)²
-  </code>
-</div>
-
-<p>
-  These metrics are computed over histogram bin centers to quantitatively assess
-  the goodness of fit between empirical data and theoretical models.
-</p>
-
-
-      <h4>Tech Stack</h4>
-      <p>Python, NumPy, pandas, SciPy, Matplotlib, Streamlit</p>
-
-  </div>
-
-    <!-- RIGHT COLUMN: IMAGES -->
-    <div class="project-media">
-      <img src="images/Histogram1.png" alt="Histogram visualization interface">
-      <img src="images/Histogram2.png" alt="Distribution fitting results">
-      <img src="images/graph.png" alt="Distribution fitting results">
-    </div>
-  </div>
-</div>
-<div class="project-card fade" id="project-pc-builds">
-
-  <h3>Custom Computer Systems Design, Upgrades & Optimization</h3>
-
-  <div class="project-grid">
-
-    <!-- LEFT COLUMN: TEXT -->
-    <div class="project-text">
-
-      <h4>How It Started</h4>
-      <p>
-        My interest in computer hardware began with improving my own systems and quickly grew into helping
-        friends and family get more performance out of the machines they already owned. Over time, this
-        turned into regular consulting, upgrading, and building work through word-of-mouth referrals.
-        I found that many performance issues weren’t caused by faulty hardware, but by bottlenecks,
-        thermal limitations, or unbalanced component choices.
-      </p>
-
-      <h4>Upgrades, Repairs & Lifecycle Extension</h4>
-      <p>
-        I upgraded and optimized existing desktops and laptops by replacing thermal paste, adding or
-        upgrading RAM, installing SSDs, and resolving thermal throttling (reducing temps. by up to 25%)
-        or compatibility issues. These targeted improvements often extended system lifespan and delivered
-        noticeable performance gains without requiring a full rebuild.
-      </p>
-
-      <h4>Building From the Ground Up</h4>
-      <p>
-        I designed and assembled complete desktop computer systems from scratch, handling every major
-        component including the CPU, GPU, motherboard, RAM, power supply, storage, cooling, case,
-        and airflow configuration.
-      </p>
-
-      <h4>Component Selection & Bottleneck Prevention</h4>
-      <p>
-        Before any build, I evaluated how individual components would work together to avoid performance
-        bottlenecks and unnecessary overspending.
-      </p>
-
-      <h4>System Assembly, Testing & Validation</h4>
-      <p>
-        All systems were fully assembled and tested end-to-end, including cable management, airflow
-        optimization, thermal testing, and BIOS configuration.
-      </p>
-
-      <h5>Tools & Platforms</h5>
-      <ul class="tool-list">
-        <li>
-          PCPartPicker – compatibility checks<br>
-          <a href="https://pcpartpicker.com/" target="_blank" class="project-link">
-            🔗 Open PCPartPicker
-          </a>
-        </li>
-        <li>
-          Bottleneck analysis tools<br>
-          <a href="https://pcbottleneckcalculator.io/" target="_blank" class="project-link">
-            🔗 Open Bottleneck Calculator
-          </a>
-        </li>
-      </ul>
-
-      <h5>Tips for Users</h5>
-      <ul>
-        <li>A balanced system beats a single overpowered component every time</li>
-        <li>Proper cooling and airflow are critical for sustained performance</li>
-        <li>Planning builds with future upgrades in mind saves money long-term</li>
-      </ul>
-
-    </div>
-  
-    <!-- RIGHT COLUMN: IMAGES -->
-    <div class="project-media">
-      <img src="images/PC1.jpg" alt="PC build interior">
-      <img src="images/PC2.jpeg" alt="Inside and airflow">
-      <img src="images/PC3.jpeg" alt="Completed desktop system">
-    </div>
-
-  </div>
-</div>
-<div class="project-card fade" id="project-uvc">
-
-  <h3>UV-C Medical Instrument Cleaner</h3>
-
-  <div class="project-grid">
-
-    <!-- LEFT COLUMN: TEXT -->
-    <div class="project-text">
-
-      <p>
-        A sustainable, compact sanitation device designed to reduce plastic waste in dental clinics by enabling
-        safe, on-site sterilization of reusable instruments.
-      </p>
-
-      <h4>Overview</h4>
-      <p>
-        Traditional dental instrument sterilization relies on single-use plastic packaging and off-site cleaning,
-        generating significant waste and operational inefficiencies. This project explores a reusable,
-        sealed sanitation system that integrates steam cleaning and UV-C disinfection to allow instruments
-        to be safely cleaned on-site.
-      </p>
-
-      <h4>Problem</h4>
-      <ul>
-        <li>Dental clinics generate large volumes of single-use plastic waste</li>
-        <li>Packaging materials are difficult to recycle</li>
-        <li><strong>22.3 g of plastic per patient</strong></li>
-        <li><strong>2,000+ disposable units</strong> per clinic annually</li>
-        <li>Reusable instruments require off-site sterilization</li>
-      </ul>
-
-      <h4>Design Goals</h4>
-      <ul>
-        <li><strong>Sustainability:</strong> Reduce single-use plastics</li>
-        <li><strong>Ease of Use:</strong> Compact and clinic-friendly</li>
-        <li><strong>Safety:</strong> Eliminate pathogens without exposure</li>
-      </ul>
-
-      <h4>Solution</h4>
-      <p>
-        The final design combines steam cleaning with UV-C light disinfection inside a sealed aluminum enclosure.
-        UV-C light (100–280 nm) disrupts DNA replication in microorganisms, while reflective aluminum
-        improves sanitation efficiency.
-      </p>
-
-      <h4>Final Design</h4>
-      <ul>
-        <li><strong>Device:</strong> UV-C Medical Instrument Cleaner, designed and rendered on CAD</li>
-        <li><strong>Dimensions:</strong> 2″ × 2″ × 8″</li>
-        <li><strong>Components:</strong> Body, Drawer, UV-C Light System</li>
-      </ul>
-
-      <h4>Outcome & Impact</h4>
-      <p>
-        This project demonstrates how sealed UV-C sanitation can reduce plastic waste while maintaining
-        medical safety standards. The modular design supports scalability and broader healthcare use.
-      </p>
-      <h4>In Depth Presentation</h4>
-        <div class="pdf-container">
-          <iframe
-            src="files/Slides.pdf"
-            loading="lazy">
-          </iframe>
+    <!-- ===================== UV-C ===================== -->
+    <details class="project-card" id="project-uvc">
+      <summary class="project-summary">
+        <img class="project-thumb" src="images/proj4.webp" alt="Final UV-C cleaner design" loading="lazy">
+        <div class="project-overview">
+          <h3>UV-C Medical Instrument Cleaner</h3>
+          <p class="project-tagline">A compact device that sterilizes reusable dental tools on-site, cutting single-use plastic packaging.</p>
+          <div class="stats">
+            <div class="stat"><span class="stat-num">22.3 g</span><span class="stat-label">plastic waste per patient targeted</span></div>
+            <div class="stat"><span class="stat-num">2,000+</span><span class="stat-label">disposable units per clinic / year</span></div>
+            <div class="stat"><span class="stat-num">2″×2″×8″</span><span class="stat-label">final device size</span></div>
+          </div>
+          <ul class="overview-points">
+            <li>Combined steam cleaning with UV-C (100–280 nm) inside a sealed aluminum enclosure</li>
+            <li>Designed body, drawer and UV-C light system in CAD</li>
+            <li>Reflective aluminum interior to improve disinfection coverage</li>
+          </ul>
+          <div class="tags"><span>CAD</span><span>UV-C</span><span>Sustainable design</span></div>
+          <span class="expand-hint">Show full details</span>
         </div>
-    </div>
+      </summary>
 
-    <!-- RIGHT COLUMN: IMAGES -->
-    <div class="project-media">
-      <img src="images/proj2.png" alt="Internal layout">
-      <img src="images/proj1.png" alt="UV-C cleaner concept">
-      <img src="images/proj3.png" alt="Drawer mechanism">
-      <img src="images/proj4.png" alt="Final assembled design">
-    </div>
+      <div class="project-grid">
+        <div class="project-text">
+          <h4>Overview</h4>
+          <p>
+            Traditional dental instrument sterilization relies on single-use plastic packaging and off-site cleaning,
+            generating significant waste and operational inefficiencies. This project explores a reusable,
+            sealed sanitation system that integrates steam cleaning and UV-C disinfection to allow instruments
+            to be safely cleaned on-site.
+          </p>
+
+          <h4>Problem</h4>
+          <ul>
+            <li>Dental clinics generate large volumes of single-use plastic waste</li>
+            <li>Packaging materials are difficult to recycle</li>
+            <li><strong>22.3 g of plastic per patient</strong></li>
+            <li><strong>2,000+ disposable units</strong> per clinic annually</li>
+            <li>Reusable instruments require off-site sterilization</li>
+          </ul>
+
+          <h4>Design Goals</h4>
+          <ul>
+            <li><strong>Sustainability:</strong> Reduce single-use plastics</li>
+            <li><strong>Ease of Use:</strong> Compact and clinic-friendly</li>
+            <li><strong>Safety:</strong> Eliminate pathogens without exposure</li>
+          </ul>
+
+          <h4>Solution</h4>
+          <p>
+            The final design combines steam cleaning with UV-C light disinfection inside a sealed aluminum enclosure.
+            UV-C light (100–280 nm) disrupts DNA replication in microorganisms, while reflective aluminum
+            improves sanitation efficiency.
+          </p>
+
+          <h4>Final Design</h4>
+          <ul>
+            <li><strong>Device:</strong> UV-C Medical Instrument Cleaner, designed and rendered on CAD</li>
+            <li><strong>Dimensions:</strong> 2″ × 2″ × 8″</li>
+            <li><strong>Components:</strong> Body, Drawer, UV-C Light System</li>
+          </ul>
+
+          <h4>Outcome &amp; Impact</h4>
+          <p>
+            This project demonstrates how sealed UV-C sanitation can reduce plastic waste while maintaining
+            medical safety standards. The modular design supports scalability and broader healthcare use.
+          </p>
+
+          <a class="btn btn-primary" href="files/Slides.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> View full presentation (PDF)</a>
+        </div>
+
+        <div class="project-media">
+          <img src="images/proj2.webp" alt="Internal layout" loading="lazy">
+          <img src="images/proj1.webp" alt="UV-C cleaner concept" loading="lazy">
+          <img src="images/proj3.webp" alt="Drawer mechanism" loading="lazy">
+          <img src="images/proj4.webp" alt="Final assembled design" loading="lazy">
+        </div>
+      </div>
+    </details>
+
+    <!-- ===================== WIND / TENG ===================== -->
+    <details class="project-card" id="project-wind">
+      <summary class="project-summary">
+        <img class="project-thumb" src="images/teng.webp" alt="Triboelectric energy harvester concept" loading="lazy">
+        <div class="project-overview">
+          <h3>Portable Wind-Powered Energy Harvester</h3>
+          <p class="project-tagline">A triboelectric nanogenerator (TENG) that turns wind motion into electricity for off-grid use.</p>
+          <div class="stats">
+            <div class="stat"><span class="stat-num">3.4 V</span><span class="stat-label">peak output under wind</span></div>
+            <div class="stat"><span class="stat-num">TENG</span><span class="stat-label">triboelectric energy harvesting</span></div>
+            <div class="stat"><span class="stat-num">Off-grid</span><span class="stat-label">power for outdoor &amp; emergency use</span></div>
+          </div>
+          <ul class="overview-points">
+            <li>Modeled and iterated the full mechanism in SolidWorks</li>
+            <li>Tuned for motion transfer at low wind speeds in a portable form factor</li>
+            <li>Tested multiple iterations to improve stability, durability and output</li>
+          </ul>
+          <div class="tags"><span>SolidWorks</span><span>Nanotechnology</span><span>Renewable energy</span></div>
+          <span class="expand-hint">Show full details</span>
+        </div>
+      </summary>
+
+      <div class="project-grid">
+        <div class="project-text">
+          <h4>Project Overview</h4>
+          <p>
+            This project explores small-scale renewable energy generation through the triboelectric effect,
+            converting ambient wind motion into usable electrical energy. The goal was to design a portable,
+            off-grid power solution suitable for outdoor, emergency, and wilderness applications where
+            conventional power sources are unavailable.
+          </p>
+
+          <h4>Concept &amp; Motivation</h4>
+          <p>
+            Many portable energy solutions rely on batteries or solar panels, which can be unreliable in
+            shaded or remote environments. A wind-powered triboelectric nanogenerator offers a lightweight,
+            mechanically simple alternative that harvests energy from everyday environmental motion.
+          </p>
+
+          <h4>How It Works</h4>
+          <ul>
+            <li>Wind induces mechanical motion within the system</li>
+            <li>Contact and separation between triboelectric layers transfers charge</li>
+            <li>The resulting electrostatic potential is collected as electrical output</li>
+            <li>The prototype achieved a peak output of <strong>3.4 V</strong> under wind excitation</li>
+          </ul>
+
+          <h4>Design &amp; Engineering</h4>
+          <p>
+            The mechanical system was fully modeled and iterated in SolidWorks, with emphasis on component
+            fit and alignment, efficient motion transfer under low wind speeds, and a compact, portable
+            form factor. Multiple design iterations were tested to improve stability, durability, and
+            electrical output.
+          </p>
+
+          <h4>Outcome</h4>
+          <p>
+            The final design demonstrates the feasibility of wind-driven triboelectric energy harvesting
+            for portable, off-grid applications. While optimized for low-power output, the system highlights
+            the potential of TENG technology as a supplement to traditional renewable energy sources,
+            particularly in environments where solar or battery solutions fall short.
+          </p>
+        </div>
+
+        <div class="project-media">
+          <img src="images/teng.webp" alt="Triboelectric energy harvester concept" loading="lazy">
+          <img src="images/teng2.webp" alt="Mechanical design and motion system" loading="lazy">
+        </div>
+      </div>
+    </details>
+
+    <!-- ===================== HISTOGRAM ===================== -->
+    <details class="project-card" id="project-histogram">
+      <summary class="project-summary">
+        <img class="project-thumb" src="images/graph.webp" alt="Distribution fit plot" loading="lazy">
+        <div class="project-overview">
+          <h3>Interactive Distribution Fitting Tool</h3>
+          <p class="project-tagline">A live web app that fits probability distributions to real data and shows how good each fit is.</p>
+          <div class="stats">
+            <div class="stat"><span class="stat-num">Live</span><span class="stat-label">web app anyone can use</span></div>
+            <div class="stat"><span class="stat-num">3</span><span class="stat-label">fit metrics: MAE, MSE, R²</span></div>
+            <div class="stat"><span class="stat-num">MLE</span><span class="stat-label">parameter fitting with SciPy</span></div>
+          </div>
+          <ul class="overview-points">
+            <li>Upload a CSV or type data in, then see a normalized histogram instantly</li>
+            <li>Fit several distributions and adjust parameters with sliders</li>
+            <li>Built to make distribution fitting visual instead of a black box</li>
+          </ul>
+          <div class="tags"><span>Python</span><span>NumPy</span><span>pandas</span><span>SciPy</span><span>Matplotlib</span><span>Streamlit</span></div>
+          <span class="expand-hint">Show full details</span>
+        </div>
+      </summary>
+
+      <div class="project-grid">
+        <div class="project-text">
+          <div class="link-row">
+            <a href="https://histogram-fitter-deximafukjegxrdtzr8nbs.streamlit.app" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-arrow-up-right-from-square"></i> Open Histogram Fitter App</a>
+            <a href="data/exponential_sample.csv" download class="btn"><i class="fas fa-download"></i> Sample dataset (CSV)</a>
+          </div>
+          <p class="dataset-note">Sample data generated from an exponential distribution (λ = 1).</p>
+
+          <h4>Project Overview</h4>
+          <p>
+            This project is a browser-based interactive application designed to help users explore how real-world
+            datasets align with common probability distributions. Users can input data manually or upload CSV files,
+            visualize normalized histograms, and fit multiple statistical distributions in real time.
+          </p>
+
+          <h4>Problem Motivation</h4>
+          <p>
+            In many introductory statistics and engineering courses, distribution fitting software outputs parameters,
+            but users rarely understand how or why a particular distribution fits better than another. I wanted to build a tool that makes distribution
+            fitting transparent, interactive, and exploratory, allowing users to visually and quantitatively see how parameter changes
+            affect model quality and data interpretation.
+          </p>
+
+          <h4>Key Features</h4>
+          <ul>
+            <li>Manual data entry and robust CSV uploads</li>
+            <li>Maximum likelihood estimation using SciPy</li>
+            <li>Interactive parameter sliders</li>
+            <li>Quantitative fit evaluation (MAE, MSE, R²)</li>
+          </ul>
+
+          <h4>Mathematical Model</h4>
+          <p>
+            The application models empirical data using continuous probability density functions.
+            For a given distribution, parameters are estimated using maximum likelihood estimation (MLE),
+            and the resulting probability density function is evaluated as:
+          </p>
+          <div class="formula-box">
+            <p><strong>General PDF:</strong></p>
+            <code>f(x | θ) = probability density given parameters θ</code>
+          </div>
+          <div class="formula-box">
+            <p><strong>Model Evaluation:</strong></p>
+            <code>MSE = (1 / n) Σ (yᵢ − ŷᵢ)²</code>
+          </div>
+          <p>
+            These metrics are computed over histogram bin centers to quantitatively assess
+            the goodness of fit between empirical data and theoretical models.
+          </p>
+
+          <h4>Tech Stack</h4>
+          <p>Python, NumPy, pandas, SciPy, Matplotlib, Streamlit</p>
+        </div>
+
+        <div class="project-media">
+          <img src="images/Histogram1.webp" alt="Histogram visualization interface" loading="lazy">
+          <img src="images/Histogram2.webp" alt="Data input panel" loading="lazy">
+          <img src="images/graph.webp" alt="Distribution fitting results" loading="lazy">
+        </div>
+      </div>
+    </details>
+
+    <!-- ===================== PC BUILDS ===================== -->
+    <details class="project-card" id="project-pc-builds">
+      <summary class="project-summary">
+        <img class="project-thumb" src="images/PC1.webp" alt="PC build interior" loading="lazy">
+        <div class="project-overview">
+          <h3>Custom Computer Systems: Builds, Upgrades &amp; Optimization</h3>
+          <p class="project-tagline">Designing, building and tuning desktops and laptops for friends, family and word-of-mouth clients.</p>
+          <div class="stats">
+            <div class="stat"><span class="stat-num">Up to 25%</span><span class="stat-label">lower temperatures after fixes</span></div>
+            <div class="stat"><span class="stat-num">End-to-end</span><span class="stat-label">builds, from part selection to BIOS</span></div>
+            <div class="stat"><span class="stat-num">Referral</span><span class="stat-label">based client work</span></div>
+          </div>
+          <ul class="overview-points">
+            <li>Diagnosed bottlenecks and thermal throttling instead of just replacing parts</li>
+            <li>Upgraded RAM, SSDs and thermal paste to extend system lifespan</li>
+            <li>Picked balanced components to avoid bottlenecks and overspending</li>
+          </ul>
+          <div class="tags"><span>Hardware</span><span>Thermal testing</span><span>Troubleshooting</span></div>
+          <span class="expand-hint">Show full details</span>
+        </div>
+      </summary>
+
+      <div class="project-grid">
+        <div class="project-text">
+          <h4>How It Started</h4>
+          <p>
+            My interest in computer hardware began with improving my own systems and quickly grew into helping
+            friends and family get more performance out of the machines they already owned. Over time, this
+            turned into regular consulting, upgrading, and building work through word-of-mouth referrals.
+            I found that many performance issues weren’t caused by faulty hardware, but by bottlenecks,
+            thermal limitations, or unbalanced component choices.
+          </p>
+
+          <h4>Upgrades, Repairs &amp; Lifecycle Extension</h4>
+          <p>
+            I upgraded and optimized existing desktops and laptops by replacing thermal paste, adding or
+            upgrading RAM, installing SSDs, and resolving thermal throttling (reducing temperatures by up to 25%)
+            or compatibility issues. These targeted improvements often extended system lifespan and delivered
+            noticeable performance gains without requiring a full rebuild.
+          </p>
+
+          <h4>Building From the Ground Up</h4>
+          <p>
+            I designed and assembled complete desktop computer systems from scratch, handling every major
+            component including the CPU, GPU, motherboard, RAM, power supply, storage, cooling, case,
+            and airflow configuration.
+          </p>
+
+          <h4>Component Selection &amp; Bottleneck Prevention</h4>
+          <p>
+            Before any build, I evaluated how individual components would work together to avoid performance
+            bottlenecks and unnecessary overspending, using PCPartPicker for compatibility checks and
+            bottleneck analysis tools.
+          </p>
+
+          <h4>System Assembly, Testing &amp; Validation</h4>
+          <p>
+            All systems were fully assembled and tested end-to-end, including cable management, airflow
+            optimization, thermal testing, and BIOS configuration.
+          </p>
+        </div>
+
+        <div class="project-media">
+          <img src="images/PC1.webp" alt="PC build interior" loading="lazy">
+          <img src="images/PC2.webp" alt="Inside and airflow" loading="lazy">
+          <img src="images/PC3.webp" alt="Completed desktop system" loading="lazy">
+        </div>
+      </div>
+    </details>
 
   </div>
-</div>
-
-<div class="project-card fade" id="project-wind">
-  <h3>Portable Wind-Powered Energy Harvester</h3>
-
-  <div class="project-grid">
-
-    <!-- LEFT COLUMN: TEXT -->
-    <div class="project-text">
-
-      <h4>Project Overview</h4>
-      <p>
-        This project explores small-scale renewable energy generation through the triboelectric effect,
-        converting ambient wind motion into usable electrical energy. The goal was to design a portable,
-        off-grid power solution suitable for outdoor, emergency, and wilderness applications where
-        conventional power sources are unavailable.
-      </p>
-
-      <h4>Concept & Motivation</h4>
-      <p>
-        Many portable energy solutions rely on batteries or solar panels, which can be unreliable in
-        shaded or remote environments. A wind-powered triboelectric nanogenerator offers a lightweight,
-        mechanically simple alternative that harvests energy from everyday environmental motion.
-      </p>
-
-      <h4>How It Works</h4>
-      <ul>
-        <li>Wind induces mechanical motion within the system</li>
-        <li>Contact and separation between triboelectric layers transfers charge</li>
-        <li>The resulting electrostatic potential is collected as electrical output</li>
-        <li>The prototype achieved a peak output of <strong>3.4 V</strong> under wind excitation</li>
-      </ul>
-
-      <h4>Design & Engineering</h4>
-      <p>
-        The mechanical system was fully modeled and iterated in SolidWorks, with emphasis on component
-        fit and alignment, efficient motion transfer under low wind speeds, and a compact, portable
-        form factor. Multiple design iterations were tested to improve stability, durability, and
-        electrical output.
-      </p>
-
-      <h4>Outcome</h4>
-      <p>
-        The final design demonstrates the feasibility of wind-driven triboelectric energy harvesting
-        for portable, off-grid applications. While optimized for low-power output, the system highlights
-        the potential of TENG technology as a supplement to traditional renewable energy sources,
-        particularly in environments where solar or battery solutions fall short.
-      </p>
-
-    </div>
-
-    <!-- RIGHT COLUMN: IMAGES -->
-    <div class="project-media">
-      <img src="images/teng.png" alt="Triboelectric energy harvester concept">
-      <img src="images/teng2.png" alt="Mechanical design and motion system">
-    </div>
-
-  </div>
-</div>
-</div>
 </section>
 
 <!-- CONTACT SECTION -->
-<section id="contact" class="fade section-placeholder">
-
+<section id="contact" class="section-dark">
   <h2>Contact</h2>
-  <p>Feel free to reach out.</p>
+  <p>Feel free to reach out. Email is the fastest way to reach me.</p>
 
-  <ul class="contact-list">
-    <li>Email: msdelacr@uwaterloo.ca</li>
-    <li>LinkedIn: www.linkedin.com/in/micsam</li>
-    <li>GitHub: https://github.com/jemichael2024</li>
-  </ul>
-<form class="contact-form" action="mailto:msdelacr@uwaterloo.ca" method="post" enctype="text/plain">
-  <input 
-    type="text" 
-    name="name" 
-    placeholder="Your name" 
-    required
-  >
-
-  <input 
-    type="email" 
-    name="email" 
-    placeholder="Your email" 
-    required
-  >
-
-  <textarea 
-    name="message" 
-    placeholder="Your message"
-    rows="5"
-    required
-  ></textarea>
-
-  <button type="submit">Send Message</button>
-
-</form>
-
+  <div class="contact-cards">
+    <a class="contact-card" href="mailto:msdelacr@uwaterloo.ca">
+      <i class="fas fa-envelope"></i>
+      <span class="contact-label">Email</span>
+      <span class="contact-value">msdelacr@uwaterloo.ca</span>
+    </a>
+    <a class="contact-card" href="https://linkedin.com/in/micsam" target="_blank" rel="noopener">
+      <i class="fab fa-linkedin"></i>
+      <span class="contact-label">LinkedIn</span>
+      <span class="contact-value">linkedin.com/in/micsam</span>
+    </a>
+    <a class="contact-card" href="https://github.com/jemichael2024" target="_blank" rel="noopener">
+      <i class="fab fa-github"></i>
+      <span class="contact-label">GitHub</span>
+      <span class="contact-value">github.com/jemichael2024</span>
+    </a>
+    <a class="contact-card" href="files/Resume.pdf" target="_blank" rel="noopener">
+      <i class="fas fa-file-arrow-down"></i>
+      <span class="contact-label">Resume</span>
+      <span class="contact-value">Download PDF</span>
+    </a>
+  </div>
 </section>
 
 <footer>
-  <p>&copy; 2025 Michael Samuel Dela Cruz</p>
+  <p>&copy; <span id="year">2026</span> Michael Samuel Dela Cruz</p>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
