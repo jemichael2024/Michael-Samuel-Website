@@ -220,61 +220,6 @@ nav a:hover {
   margin: 0;
 }
 
-/* ---------- SECTION BANNERS ---------- */
-.section-banner {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 20px 24px;
-  margin-bottom: 8px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(179, 0, 0, 0.9), rgba(255, 51, 51, 0.55) 60%, rgba(255, 51, 51, 0.08));
-  border: 1px solid rgba(255, 120, 120, 0.45);
-  box-shadow: 0 10px 30px rgba(179, 0, 0, 0.25);
-}
-
-.banner-icon {
-  flex: 0 0 auto;
-  display: grid;
-  place-items: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.35);
-  border: 2px solid rgba(255, 255, 255, 0.85);
-  color: #fff;
-  font-size: 1.7rem;
-}
-
-.banner-text h2,
-.banner-text h3 {
-  margin: 0;
-  color: #fff;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: 0.01em;
-}
-
-.banner-text p {
-  margin: 6px 0 0 !important;
-  color: #ffe0e0;
-  font-size: 1rem !important;
-  line-height: 1.4 !important;
-}
-
-.section-banner + .project-list {
-  margin-top: 28px;
-}
-
-.section-banner + .contact-cards {
-  margin-top: 28px;
-}
-
-.about-text .section-banner {
-  margin-bottom: 20px;
-}
-
 /* ---------- PROJECT NAV ---------- */
 .project-nav {
   display: flex;
@@ -787,17 +732,6 @@ footer {
   }
 
   .stat-num {
-    font-size: 1.25rem;
-  }
-
-  .section-banner {
-    gap: 14px;
-    padding: 16px;
-  }
-
-  .banner-icon {
-    width: 48px;
-    height: 48px;
     font-size: 1.25rem;
   }
 
