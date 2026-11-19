@@ -1,0 +1,42 @@
+# Deploys the website to DreamHost (micsam.me) every time something is pushed to main.
+# It copies the site files to the server over SSH using rsync.
+# Credentials live in GitHub repo secrets, never in this file.
+
+name: Deploy to DreamHost
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # lets you run it by hand from the Actions tab
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      - name: Trust the DreamHost server
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H "${{ secrets.DREAMHOST_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Upload site files
+        env:
+          SSHPASS: ${{ secrets.DREAMHOST_PASSWORD }}
+        # No --delete: files on the server that aren't in the repo are left alone.
+        run: |
+          rsync -avz \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude 'README.md' \
+            --exclude 'CNAME' \
+            -e "sshpass -e ssh" \
+            ./ "${{ secrets.DREAMHOST_USER }}@${{ secrets.DREAMHOST_HOST }}:${{ secrets.DREAMHOST_PATH }}/"
