@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ======================
-     Fade-in Sections
+     Footer year
   ====================== */
-  const sections = document.querySelectorAll(".fade");
-  sections.forEach(section => section.classList.add("visible"));
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
 
   /* ======================
-     Lightbox
+     Lightbox (click a project image to enlarge)
   ====================== */
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
@@ -16,84 +16,63 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".project-media img").forEach(img => {
       img.addEventListener("click", () => {
         lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
         lightbox.classList.add("active");
       });
     });
 
-    lightbox.addEventListener("click", () => {
-      lightbox.classList.remove("active");
+    lightbox.addEventListener("click", () => lightbox.classList.remove("active"));
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") lightbox.classList.remove("active");
     });
   }
 
   /* ======================
-     Smooth Scroll
+     Project quick links: jump to the project and open it
   ====================== */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
+    anchor.addEventListener("click", e => {
+      const target = document.querySelector(anchor.getAttribute("href"));
+      if (!target) return;
       e.preventDefault();
-      document
-        .querySelector(this.getAttribute("href"))
-        ?.scrollIntoView({ behavior: "smooth" });
+      if (target.tagName === "DETAILS") target.open = true;
+      target.scrollIntoView({ behavior: "smooth" });
     });
   });
 
-  /* ======================
-     Scroll Reveal
-  ====================== */
-  const reveals = document.querySelectorAll(".reveal");
-  window.addEventListener("scroll", () => {
-    reveals.forEach(el => {
-      const top = el.getBoundingClientRect().top;
-      if (top < window.innerHeight - 100) {
-        el.classList.add("active");
-      }
-    });
-  });
-
-  /* ======================
-     Form Validation
-  ====================== */
-  const form = document.querySelector("form");
-  if (form) {
-    form.addEventListener("submit", e => {
-      const email = document.querySelector("#email")?.value || "";
-      if (!email.includes("@")) {
-        e.preventDefault();
-        alert("Please enter a valid email.");
-      }
-    });
+  // Opening the page with a link like micsam.me/#project-uvc opens that project
+  if (location.hash) {
+    const target = document.querySelector(location.hash);
+    if (target && target.tagName === "DETAILS") target.open = true;
   }
 
   /* ======================
-     Custom Cursor + Trail
+     Custom cursor dot + trail (desktop mouse only)
   ====================== */
   const cursor = document.getElementById("cursor");
-  if (!cursor) return;
+  const fineMouse = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!cursor || !fineMouse || reducedMotion) return;
 
   let lastTime = 0;
 
   window.addEventListener("mousemove", e => {
-    // Move cursor dot
     cursor.style.left = `${e.clientX}px`;
     cursor.style.top = `${e.clientY}px`;
 
-    // Trail (throttled)
     const now = Date.now();
     if (now - lastTime > 20) {
       lastTime = now;
-
       const trail = document.createElement("div");
       trail.className = "trail";
       trail.style.left = `${e.clientX}px`;
       trail.style.top = `${e.clientY}px`;
-
       document.body.appendChild(trail);
       setTimeout(() => trail.remove(), 600);
     }
   });
 
-  // Cursor hover scale
-  document.querySelectorAll("a, button").forEach(el => {
+  document.querySelectorAll("a, button, summary").forEach(el => {
     el.addEventListener("mouseenter", () => {
       cursor.style.transform = "translate(-50%, -50%) scale(2)";
     });
