@@ -740,26 +740,38 @@ footer {
 
 .cnt {
   position: absolute;
-  width: 360px;
-  height: 80px;
+  width: 720px;
+  height: 216px;
   opacity: 0.5;
-  filter: drop-shadow(0 0 12px rgba(255, 40, 40, 0.55));
-  animation: cnt-spin 60s linear infinite, cnt-float 14s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 16px rgba(255, 40, 40, 0.55));
+  animation:
+    cnt-spin 60s linear infinite,
+    cnt-float 14s ease-in-out infinite alternate,
+    cnt-warp 7s ease-in-out infinite;
 }
 
-.cnt-1 { top: 12%; left: 4%; }
-.cnt-2 { top: 30%; right: 3%; width: 260px; height: 58px; animation-duration: 80s, 18s; animation-direction: reverse, alternate; }
-.cnt-3 { top: 58%; left: 10%; width: 300px; height: 67px; animation-duration: 70s, 16s; }
-.cnt-4 { top: 78%; right: 12%; width: 220px; height: 49px; animation-duration: 50s, 12s; animation-direction: reverse, alternate; }
-.cnt-5 { top: 46%; left: 42%; width: 180px; height: 40px; opacity: 0.3; animation-duration: 90s, 20s; }
+.cnt-1 { top: 6%; left: -4%; }
+.cnt-2 { top: 26%; right: -6%; width: 560px; height: 168px; animation-duration: 80s, 18s, 9s; animation-direction: reverse, alternate, normal; }
+.cnt-3 { top: 54%; left: 2%; width: 640px; height: 192px; animation-duration: 70s, 16s, 8s; }
+.cnt-4 { top: 76%; right: 4%; width: 480px; height: 144px; animation-duration: 50s, 12s, 6s; animation-direction: reverse, alternate, normal; }
+.cnt-5 { top: 42%; left: 36%; width: 380px; height: 114px; opacity: 0.3; animation-duration: 90s, 20s, 10s; }
 
 @keyframes cnt-spin {
   to { rotate: 360deg; }
 }
 
 @keyframes cnt-float {
-  from { translate: 0 -24px; }
-  to   { translate: 0 24px; }
+  from { translate: 0 -30px; }
+  to   { translate: 0 30px; }
+}
+
+/* Bend and stretch the tube so it looks like it's warping */
+@keyframes cnt-warp {
+  0%   { transform: skewX(0deg) scale(1, 1); }
+  25%  { transform: skewX(12deg) scale(1.08, 0.85); }
+  50%  { transform: skewX(0deg) scale(0.94, 1.18); }
+  75%  { transform: skewX(-12deg) scale(1.06, 0.88); }
+  100% { transform: skewX(0deg) scale(1, 1); }
 }
 
 /* ---------- PAGE ANIMATIONS ---------- */
@@ -865,7 +877,9 @@ html:not(.js) .section-dark > h2::after {
 
 @media (max-width: 600px) {
   .cnt-2, .cnt-5, .orb-3 { display: none; }
-  .cnt { opacity: 0.35; }
+  .cnt { opacity: 0.4; width: 420px; height: 126px; }
+  .cnt-3 { width: 380px; height: 114px; }
+  .cnt-4 { width: 320px; height: 96px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
