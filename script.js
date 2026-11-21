@@ -1,6 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ======================
+     Cover: split the name into letters for the entrance animation
+  ====================== */
+  let letterIndex = 0;
+  document.querySelectorAll(".cover-name > span").forEach(line => {
+    const text = line.textContent;
+    line.textContent = "";
+    [...text].forEach(char => {
+      const span = document.createElement("span");
+      span.className = "ch";
+      span.setAttribute("aria-hidden", "true");
+      span.textContent = char;
+      span.style.setProperty("--i", letterIndex++);
+      line.appendChild(span);
+    });
+  });
+
+  /* ======================
+     Cover: "Explore my work" dropdown
+  ====================== */
+  const toggle = document.querySelector(".cover-toggle");
+  const menu = document.getElementById("cover-links");
+  if (toggle && menu) {
+    const setOpen = open => {
+      menu.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+    };
+    toggle.addEventListener("click", e => {
+      e.stopPropagation();
+      setOpen(!menu.classList.contains("open"));
+    });
+    menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setOpen(false)));
+    document.addEventListener("click", e => {
+      if (!menu.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") setOpen(false);
+    });
+  }
+
+  /* ======================
      Footer year
   ====================== */
   const year = document.getElementById("year");
@@ -50,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
      Scroll reveal animations
   ====================== */
   const revealTargets = document.querySelectorAll(
-    ".section-dark > h2, .section-hint, .project-nav, .project-card, .contact-card, .about-text"
+    ".section-dark > h2, .section-hint, .project-nav, .project-card, .contact-card, .about-box"
   );
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -58,7 +98,10 @@ document.addEventListener("DOMContentLoaded", () => {
     revealTargets.forEach(el => el.classList.add("in-view"));
   } else {
     // Stagger items that sit side by side (contact cards)
-    document.querySelectorAll(".contact-card").forEach((el, i) => el.style.setProperty("--delay", `${i * 0.08}s`));
+    document.querySelectorAll(".contact-card, .about-grid .about-box").forEach(el => {
+      const i = [...el.parentElement.children].indexOf(el);
+      el.style.setProperty("--delay", `${i * 0.08}s`);
+    });
     revealTargets.forEach(el => el.classList.add("reveal"));
     const io = new IntersectionObserver(entries => {
       entries.forEach(entry => {
