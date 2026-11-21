@@ -41,6 +41,30 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ======================
+     Light / dark mode switch (choice is remembered)
+  ====================== */
+  const root = document.documentElement;
+  const setTheme = (theme, save) => {
+    root.setAttribute("data-theme", theme);
+    if (save) {
+      try { localStorage.setItem("theme", theme); } catch (e) {}
+    }
+  };
+  document.querySelectorAll(".theme-toggle").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.stopPropagation();
+      setTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark", true);
+    });
+  });
+  // Follow the system setting until the visitor picks one
+  const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  darkQuery.addEventListener?.("change", e => {
+    let saved = null;
+    try { saved = localStorage.getItem("theme"); } catch (err) {}
+    if (!saved) setTheme(e.matches ? "dark" : "light", false);
+  });
+
+  /* ======================
      Footer year
   ====================== */
   const year = document.getElementById("year");
