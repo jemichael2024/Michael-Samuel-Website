@@ -9,7 +9,7 @@
 
 html, body {
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip (not hidden) so the sticky header keeps working */
   margin: 0;
 }
 
@@ -29,10 +29,73 @@ html {
   --line: #e4e5e8;
   --paper: #ffffff;
   --paper-2: #f6f6f7;
+  --text-2: var(--text-2);
+  --card: #ffffff;
+  --red-line: #f4c3cc;
+  --shadow: rgba(0, 0, 0, 0.07);
+
+  /* cover (first screen) */
+  --cover-bg-1: #ffffff;
+  --cover-bg-2: #eeeef0;
+  --cover-fg: var(--ink);
+  --cover-dim: #4a4c52;
+  --cover-border: rgba(0, 0, 0, 0.25);
+  --cover-glass: rgba(0, 0, 0, 0.03);
+  --cover-hex-opacity: 0.1;
+  color-scheme: light;
 
   /* honeycomb line pattern used as a subtle accent */
   --hex-red: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='34.64' viewBox='0 0 60 34.64'%3E%3Cpath d='M0 17.32 10 0h20l10 17.32-10 17.32H10zM40 17.32h20' fill='none' stroke='%23c8102e' stroke-width='1.2'/%3E%3C/svg%3E");
   --hex-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='34.64' viewBox='0 0 60 34.64'%3E%3Cpath d='M0 17.32 10 0h20l10 17.32-10 17.32H10zM40 17.32h20' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+/* dark mode: chosen with the toggle, or taken from the system setting */
+:root[data-theme="dark"] {
+  --red: #e0233f;
+  --red-dark: #c8102e;
+  --red-soft: rgba(224, 35, 63, 0.14);
+  --ink: #ececee;
+  --muted: #a0a2a9;
+  --line: #2a2c31;
+  --paper: #0d0e10;
+  --paper-2: #141518;
+  --text-2: #c9cad0;
+  --card: #18191c;
+  --red-line: rgba(224, 35, 63, 0.4);
+  --shadow: rgba(0, 0, 0, 0.45);
+  --cover-bg-1: #1b1b1e;
+  --cover-bg-2: #0b0b0c;
+  --cover-fg: #ffffff;
+  --cover-dim: #d9d9dc;
+  --cover-border: rgba(255, 255, 255, 0.4);
+  --cover-glass: rgba(255, 255, 255, 0.04);
+  --cover-hex-opacity: 0.22;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --red: #e0233f;
+    --red-dark: #c8102e;
+    --red-soft: rgba(224, 35, 63, 0.14);
+    --ink: #ececee;
+    --muted: #a0a2a9;
+    --line: #2a2c31;
+    --paper: #0d0e10;
+    --paper-2: #141518;
+    --text-2: #c9cad0;
+    --card: #18191c;
+    --red-line: rgba(224, 35, 63, 0.4);
+    --shadow: rgba(0, 0, 0, 0.45);
+    --cover-bg-1: #1b1b1e;
+    --cover-bg-2: #0b0b0c;
+    --cover-fg: #ffffff;
+    --cover-dim: #d9d9dc;
+    --cover-border: rgba(255, 255, 255, 0.4);
+    --cover-glass: rgba(255, 255, 255, 0.04);
+  --cover-hex-opacity: 0.22;
+    color-scheme: dark;
+  }
 }
 
 /* ---------- GLOBAL ---------- */
@@ -44,6 +107,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-weight: 300;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4,
@@ -140,8 +204,8 @@ img {
   display: grid;
   place-items: center;
   padding: 48px 20px 90px;
-  background: radial-gradient(ellipse at 50% 40%, #1b1b1e 0%, var(--black) 70%);
-  color: #fff;
+  background: radial-gradient(ellipse at 50% 40%, var(--cover-bg-1) 0%, var(--cover-bg-2) 70%);
+  color: var(--cover-fg);
   overflow: hidden;
   isolation: isolate;
 }
@@ -153,7 +217,7 @@ img {
   z-index: -1;
   background-image: var(--hex-red);
   background-size: 60px 34.64px;
-  opacity: 0.22;
+  opacity: var(--cover-hex-opacity);
   -webkit-mask-image: radial-gradient(ellipse at center, transparent 30%, #000 85%);
   mask-image: radial-gradient(ellipse at center, transparent 30%, #000 85%);
   animation: hex-drift 40s linear infinite;
@@ -189,7 +253,7 @@ img {
 
 .cover-kicker {
   margin: 0 auto 22px;
-  color: #d9d9dc;
+  color: var(--cover-dim);
   font-weight: 400;
   font-size: clamp(0.85rem, 1.6vw, 1rem);
   letter-spacing: 0.14em;
@@ -261,9 +325,9 @@ img {
   gap: 12px;
   padding: 14px 26px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.04);
-  color: #fff;
+  border: 1px solid var(--cover-border);
+  background: var(--cover-glass);
+  color: var(--cover-fg);
   font: inherit;
   font-weight: 400;
   font-size: 1.05rem;
@@ -275,6 +339,7 @@ img {
 .cover-toggle[aria-expanded="true"] {
   background: var(--red);
   border-color: var(--red);
+  color: #fff;
 }
 
 .cover-toggle i {
@@ -294,9 +359,10 @@ img {
   left: 50%;
   width: 260px;
   translate: -50% 0;
-  background: #fff;
+  background: var(--card);
+  border: 1px solid var(--line);
   border-radius: 14px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
   text-align: left;
   z-index: 5;
   opacity: 0;
@@ -349,8 +415,8 @@ img {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
+  border: 1px solid var(--cover-border);
+  color: var(--cover-fg);
   font-size: 1.1rem;
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
@@ -358,6 +424,7 @@ img {
 .cover-social a:hover {
   background: var(--red);
   border-color: var(--red);
+  color: #fff;
   transform: translateY(-2px);
 }
 
@@ -366,7 +433,7 @@ img {
   bottom: 26px;
   left: 50%;
   translate: -50% 0;
-  color: #fff;
+  color: var(--cover-fg);
   opacity: 0.7;
   font-size: 1.3rem;
   animation: bob 2s ease-in-out infinite;
@@ -502,6 +569,49 @@ nav a:hover::after {
   transform: translateY(-2px);
 }
 
+/* light / dark switch */
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--red);
+  transform: translateY(-2px);
+}
+
+/* show the icon for the mode you would switch to */
+.theme-toggle .fa-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .fa-sun { display: inline-block; }
+:root[data-theme="dark"] .theme-toggle .fa-moon { display: none; }
+
+.cover-theme {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 11;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--cover-border);
+  color: var(--cover-fg);
+  animation: fade-up 0.8s ease 1.7s both;
+}
+
+.cover-theme:hover {
+  border-color: var(--red);
+  color: #fff;
+}
+
 /* =========================================================
    SECTIONS
    ========================================================= */
@@ -566,7 +676,7 @@ nav a:hover::after {
 }
 
 .about-box {
-  background: var(--paper);
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 24px;
@@ -576,7 +686,7 @@ nav a:hover::after {
 .about-box:hover {
   border-color: var(--red);
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 28px var(--shadow);
 }
 
 .about-icon {
@@ -598,14 +708,41 @@ nav a:hover::after {
 
 .about-box p {
   margin: 0;
-  color: #34363b;
+  color: var(--text-2);
   line-height: 1.65;
   font-size: 0.98rem;
 }
 
-.skills-box {
-  margin-top: 20px;
-  max-width: 860px;
+/* one centred box: short intro, then skills */
+#about {
+  text-align: center;
+}
+
+.about-single {
+  max-width: 820px;
+  margin: 28px auto 0;
+  padding: 36px 40px;
+  text-align: left;
+}
+
+.about-single:hover {
+  transform: none;
+}
+
+.about-single .about-lead {
+  max-width: none;
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.about-single h3 {
+  margin: 28px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .skills {
@@ -634,7 +771,7 @@ nav a:hover::after {
 
 .skills dd {
   margin: 0;
-  color: #34363b;
+  color: var(--text-2);
 }
 
 /* ---------- LAB SKILLS ---------- */
@@ -667,7 +804,7 @@ nav a:hover::after {
   border: 1px solid var(--line);
   font-size: 0.93rem;
   line-height: 1.4;
-  color: #34363b;
+  color: var(--text-2);
 }
 
 .lab-list li::before {
@@ -697,7 +834,7 @@ nav a:hover::after {
 .project-nav a {
   padding: 9px 16px;
   border-radius: 999px;
-  background: var(--paper);
+  background: var(--card);
   border: 1px solid var(--line);
   color: var(--ink);
   text-decoration: none;
@@ -723,7 +860,7 @@ nav a:hover::after {
 }
 
 .project-card {
-  background: var(--paper);
+  background: var(--card);
   border: 1px solid var(--line);
   border-left: 4px solid var(--line);
   border-radius: 14px;
@@ -735,7 +872,7 @@ nav a:hover::after {
 .project-card[open] {
   border-color: var(--line);
   border-left-color: var(--red);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 14px 34px var(--shadow);
 }
 
 .project-summary {
@@ -767,7 +904,7 @@ nav a:hover::after {
   object-fit: cover;
   border-radius: 10px;
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--card);
 }
 
 .project-overview {
@@ -801,7 +938,7 @@ nav a:hover::after {
 
 .project-card:hover .stat {
   background: var(--red-soft);
-  border-color: #f4c3cc;
+  border-color: var(--red-line);
 }
 
 .stat:hover {
@@ -825,7 +962,7 @@ nav a:hover::after {
   margin: 0 0 14px;
   padding-left: 1.2rem;
   line-height: 1.6;
-  color: #34363b;
+  color: var(--text-2);
 }
 
 .overview-points li {
@@ -850,7 +987,7 @@ nav a:hover::after {
   border-radius: 999px;
   background: var(--paper-2);
   border: 1px solid var(--line);
-  color: #3b3d42;
+  color: var(--text-2);
 }
 
 .expand-hint {
@@ -911,7 +1048,7 @@ nav a:hover::after {
 .project-text p {
   line-height: 1.7;
   font-size: 0.98rem;
-  color: #34363b;
+  color: var(--text-2);
 }
 
 .project-text ul,
@@ -924,7 +1061,7 @@ nav a:hover::after {
 .exp-detail li {
   margin-bottom: 0.6rem;
   line-height: 1.6;
-  color: #34363b;
+  color: var(--text-2);
 }
 
 .project-text > .btn {
@@ -1062,7 +1199,7 @@ nav a:hover::after {
   gap: 6px;
   padding: 20px;
   border-radius: 14px;
-  background: var(--paper);
+  background: var(--card);
   border: 1px solid var(--line);
   color: var(--ink);
   text-decoration: none;
@@ -1072,7 +1209,7 @@ nav a:hover::after {
 .contact-card:hover {
   border-color: var(--red);
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 12px 28px var(--shadow);
 }
 
 .contact-card i {
@@ -1204,6 +1341,10 @@ footer p {
     grid-template-columns: 1fr;
   }
 
+  .about-single {
+    padding: 24px 20px;
+  }
+
   .about-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1235,11 +1376,10 @@ footer p {
 
 @media (max-width: 600px) {
   html {
-    scroll-padding-top: 16px;
+    scroll-padding-top: 128px;
   }
 
   .header {
-    position: relative;
     padding: 0.8rem 16px;
     flex-direction: column;
     align-items: flex-start;
