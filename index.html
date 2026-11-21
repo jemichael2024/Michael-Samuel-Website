@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <script>
-    /* pick light or dark before the page paints: saved choice first, then the system setting */
+    /* pick light or dark before the page paints: dark unless the visitor chose light */
     (function () {
       var t = null;
       try { t = localStorage.getItem("theme"); } catch (e) {}
-      if (t !== "light" && t !== "dark") {
-        t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      }
+      if (t !== "light") t = "dark";
       document.documentElement.setAttribute("data-theme", t);
     })();
   </script>
