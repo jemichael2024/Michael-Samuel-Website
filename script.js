@@ -56,13 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
       setTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark", true);
     });
   });
-  // Follow the system setting until the visitor picks one
-  const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  darkQuery.addEventListener?.("change", e => {
-    let saved = null;
-    try { saved = localStorage.getItem("theme"); } catch (err) {}
-    if (!saved) setTheme(e.matches ? "dark" : "light", false);
-  });
 
   /* ======================
      Footer year

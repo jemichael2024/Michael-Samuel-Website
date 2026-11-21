@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <script>
-    /* pick light or dark before the page paints: saved choice first, then the system setting */
+    /* pick light or dark before the page paints: dark unless the visitor chose light */
     (function () {
       var t = null;
       try { t = localStorage.getItem("theme"); } catch (e) {}
-      if (t !== "light" && t !== "dark") {
-        t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      }
+      if (t !== "light") t = "dark";
       document.documentElement.setAttribute("data-theme", t);
     })();
   </script>
@@ -35,7 +33,7 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2026-11-21b">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 
@@ -619,6 +617,6 @@
   <p>&copy; <span id="year">2026</span> Michael Samuel Dela Cruz</p>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js?v=2026-11-21b"></script>
 </body>
 </html>

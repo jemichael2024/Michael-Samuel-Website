@@ -49,8 +49,8 @@ html {
   --hex-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='34.64' viewBox='0 0 60 34.64'%3E%3Cpath d='M0 17.32 10 0h20l10 17.32-10 17.32H10zM40 17.32h20' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3C/svg%3E");
 }
 
-/* dark mode: chosen with the toggle, or taken from the system setting */
-:root[data-theme="dark"] {
+/* dark mode is the default; light mode only when the visitor picks it */
+:root:not([data-theme="light"]) {
   --red: #e0233f;
   --red-dark: #c8102e;
   --red-soft: rgba(224, 35, 63, 0.14);
@@ -71,31 +71,6 @@ html {
   --cover-glass: rgba(255, 255, 255, 0.04);
   --cover-hex-opacity: 0.22;
   color-scheme: dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --red: #e0233f;
-    --red-dark: #c8102e;
-    --red-soft: rgba(224, 35, 63, 0.14);
-    --ink: #ececee;
-    --muted: #a0a2a9;
-    --line: #2a2c31;
-    --paper: #0d0e10;
-    --paper-2: #141518;
-    --text-2: #c9cad0;
-    --card: #18191c;
-    --red-line: rgba(224, 35, 63, 0.4);
-    --shadow: rgba(0, 0, 0, 0.45);
-    --cover-bg-1: #1b1b1e;
-    --cover-bg-2: #0b0b0c;
-    --cover-fg: #ffffff;
-    --cover-dim: #d9d9dc;
-    --cover-border: rgba(255, 255, 255, 0.4);
-    --cover-glass: rgba(255, 255, 255, 0.04);
-  --cover-hex-opacity: 0.22;
-    color-scheme: dark;
-  }
 }
 
 /* ---------- GLOBAL ---------- */
